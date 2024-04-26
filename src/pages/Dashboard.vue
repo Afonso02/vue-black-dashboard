@@ -1,3 +1,15 @@
+<style>
+  .footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+  }
+
+  .footer p {
+  }
+
+  .footer .btn {
+  }
+</style>
 <template>
   <div>
     <div class="row">
