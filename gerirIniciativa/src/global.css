@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-poppins: Poppins;
+  --font-abel: Abel;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-size-mid: 17px;
+  --font-size-sm: 14px;
+  --font-size-3xs: 10px;
+
+  /* Colors */
+  --color-gray-100: #27293d;
+  --color-gray-200: rgba(255, 255, 255, 0.7);
+  --color-gray-300: rgba(255, 255, 255, 0.1);
+  --color-gray-400: rgba(255, 255, 255, 0);
+  --color-white: #fff;
+  --color-darkslategray: #2b3553;
+  --color-steelblue: #92a4db;
+
+  /* Gaps */
+  --gap-12xs-3: 0.3px;
+  --gap-2xs-7: 10.7px;
+  --gap-7xs: 6px;
+  --gap-7xl-3: 26.3px;
+  --gap-smi-6: 12.6px;
+  --gap-xl: 20px;
+
+  /* Paddings */
+  --padding-5xs: 8px;
+  --padding-mini: 15px;
+  --padding-5xl: 24px;
+  --padding-37xl: 56px;
+  --padding-4xs: 9px;
+  --padding-lg: 18px;
+  --padding-263xl-6: 282.6px;
+  --padding-8xs: 5px;
+  --padding-9xs-2: 3.2px;
+  --padding-2xs-7: 10.7px;
+  --padding-10xs: 3px;
+  --padding-6xs-8: 6.8px;
+  --padding-sm-4: 13.4px;
+  --padding-11xs: 2px;
+  --padding-7xl: 26px;
+  --padding-mid: 17px;
+  --padding-5xs-7: 7.7px;
+  --padding-509xl-3: 528.3px;
+  --padding-base-4: 15.4px;
+  --padding-mini-7: 14.7px;
+  --padding-smi-3: 12.3px;
+  --padding-4xs-7: 8.7px;
+  --padding-6xl: 25px;
+  --padding-lg-3: 18.3px;
+  --padding-lg-8: 18.8px;
+  --padding-base: 16px;
+  --padding-lgi-1: 19.1px;
+  --padding-lgi-3: 19.3px;
+  --padding-lg-5: 18.5px;
+  --padding-12xs: 1px;
+  --padding-lg-6: 18.6px;
+  --padding-lgi: 19px;
+  --padding-2xs: 11px;
+  --padding-114xl-2: 133.2px;
+  --padding-lg-9: 18.9px;
+  --padding-lg-7: 18.7px;
+  --padding-xl: 20px;
+  --padding-3xs: 10px;
+
+  /* Border radiuses */
+  --br-8xs-6: 4.6px;
+  --br-6xs-9: 6.9px;
+  --br-9xs-6: 3.6px;
+  --br-12xs: 1px;
+  --br-5xs: 8px;
+  --br-11xl: 30px;
+}
