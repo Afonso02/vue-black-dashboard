@@ -19,8 +19,8 @@ export default {
   data() {
     return {
       model: {
-        email: "",
-        username: "",
+        email:v-model.email,
+        username:"Joao",
       },
       user: {
         fullName: this.model.username,
