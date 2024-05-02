@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-mutating-props -->
 <template>
   <card>
-    <h5 slot="header" class="title">Edit Profile</h5>
+    <h5 slot="header" class="title">Editar Perfil</h5>
     <div class="row">
       <div class="col-md-3 px-md-1">
         <base-input
@@ -22,15 +22,15 @@
       </div>
       <div class="col-md-4 pl-md-1">
         <base-input
-          label="Email"
-          type="email"
-          placeholder="xxx@email.com"
+          label="Telemóvel"
+          type="tele"
+          placeholder="XXX XXX XXX"
           v-model="model.email"
         >
         </base-input>
       </div>
     </div>
-    <base-button slot="footer" type="primary" fill>Save</base-button>
+    <base-button slot="footer" type="primary" fill>Guardar</base-button>
   </card>
 </template>
 <script>

@@ -133,10 +133,10 @@
                 <p class="d-lg-none">Log out</p>
               </a>
               <li class="nav-link">
-                <a href="#" class="nav-item dropdown-item">Profile</a>
+                <a href="#" class="nav-item dropdown-item">Perfil</a>
               </li>
               <li class="nav-link">
-                <a href="#" class="nav-item dropdown-item">Settings</a>
+                <a href="#" class="nav-item dropdown-item">Definições</a>
               </li>
               <div class="dropdown-divider"></div>
               <li class="nav-link">
