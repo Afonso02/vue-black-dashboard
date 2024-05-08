@@ -3,10 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 d-flex flex-wrap">
-          <button class="btn btn-primary mr-2"></button>
-          <button class="btn btn-primary mr-2"></button>
-          <button class="btn btn-primary mr-2"></button>
-          <button class="btn btn-primary mr-2"></button>
+          <button class="btn btn-primary mr-2"><img src="camera.png"></button>
+          <button class="btn btn-primary mr-2">Indicadores</button>
+          <button class="btn btn-primary mr-2">Gerir Iniciativa</button>
+          <button class="btn btn-primary mr-2">Perfil</button>
         </div>
       </div>
     </div>
