@@ -1,10 +1,10 @@
 {
   "dashboard": {
-    "completedTasks": "Completed Tasks",
+    "completedTasks": "Quantidade distribuída",
     "dailySales": "Daily Sales",
-    "performance": "Performance",
-    "simpleTable": "Simple Table",
-    "totalShipments": "Total Shipments",
+    "performance": "Indicadores",
+    "simpleTable": "Saldo de Materiais",
+    "totalShipments": "Quantidade Recolhida",
     "chartCategories": ["Accounts", "Purchases", "Sessions"],
     "tasks": "Tasks({count})",
     "today": "Today",
@@ -15,56 +15,22 @@
     },
     "usersTable": {
       "title": "Simple Table",
-      "columns": ["Name", "Country", "City", "Salary"],
+      "columns": ["Item", "Quantidade"],
       "data": [
         {
           "id": 1,
-          "name": "Dakota Rice",
-          "salary": "$36.738",
-          "country": "Niger",
-          "city": "Oud-Turnhout"
+          "item": "Alimentos não perecíveis",
+          "quantidade": "50 unidades"
         },
         {
           "id": 2,
-          "name": "Minerva Hooper",
-          "salary": "$23,789",
-          "country": "Curaçao",
-          "city": "Sinaai-Waas"
+          "item": "Roupasde Inverno",
+          "quantidade": "50 peças"
         },
         {
           "id": 3,
-          "name": "Sage Rodriguez",
-          "salary": "$56,142",
-          "country": "Netherlands",
-          "city": "Baileux"
-        },
-        {
-          "id": 4,
-          "name": "Philip Chaney",
-          "salary": "$38,735",
-          "country": "Korea, South",
-          "city": "Overland Park"
-        },
-        {
-          "id": 5,
-          "name": "Doris Greene",
-          "salary": "$63,542",
-          "country": "Malawi",
-          "city": "Feldkirchen in Kärnten"
-        },
-        {
-          "id": 6,
-          "name": "Mason Porter",
-          "salary": "$98,615",
-          "country": "Chile",
-          "city": "Gloucester"
-        },
-        {
-          "id": 7,
-          "name": "Jon Porter",
-          "salary": "$78,615",
-          "country": "Portugal",
-          "city": "Gloucester"
+          "item": "Material Escolar",
+          "quantidade": "20 kits"
         }
       ]
     },

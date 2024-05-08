@@ -30,14 +30,12 @@
 </template>
 <script>
 import { BaseTable } from "@/components";
-const tableColumns = ["Name", "Country", "City", "Salary"];
+const tableColumns = ["Item", "Quantidades em Armazém"];
 const tableData = [
   {
     id: 1,
-    name: "Dakota Rice",
-    salary: "$36.738",
-    country: "Niger",
-    city: "Oud-Turnhout",
+    name: "Alimentos não perecíveis",
+    country: "50 unidades",
   },
   {
     id: 2,
@@ -90,7 +88,7 @@ export default {
   data() {
     return {
       table1: {
-        title: "Simple Table",
+        title: "Saldo de Materiais",
         columns: [...tableColumns],
         data: [...tableData],
       },
