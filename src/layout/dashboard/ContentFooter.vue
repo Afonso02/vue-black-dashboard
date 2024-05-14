@@ -9,7 +9,7 @@
           <a :href="getDashboardUrl()">
             <button class="btn btn-primary mr-1" style="font-size: 20px; padding: 20px;">📊</button>
           </a>
-          <a>
+          <a :href="getMapsUrl()">
             <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 20px;">🏠</button>
           </a>
           <a :href="getProfileUrl()">
@@ -30,6 +30,9 @@ export default {
   methods: {
     getDashboardUrl() {
       return this.$router.resolve({ name: 'Indicadores' }).href;
+    },
+    getMapsUrl() {
+      return this.$router.resolve({ name: 'Gerir Iniciativa no Terreno' }).href;
     },
     getProfileUrl() {
       return this.$router.resolve({ name: 'Perfil' }).href;

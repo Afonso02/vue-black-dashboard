@@ -45,7 +45,7 @@ const routes = [
       },
       {
         path: "maps",
-        name: "maps",
+        name: "Gerir Iniciativa no Terreno",
         component: Maps,
       },
       {

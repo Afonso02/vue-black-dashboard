@@ -6,8 +6,10 @@
     "simpleTable": "Saldo de Materiais",
     "totalShipments": "Quantidade Recolhida",
     "chartCategories": ["Accounts", "Purchases", "Sessions"],
-    "tasks": "Tasks({count})",
-    "today": "Today",
+    "tasks": "Presença",
+    "tasks1": "Confirmação",
+    "today": "Nome",
+    "today1": "Material",
     "dropdown": {
       "action": "Action",
       "anotherAction": "Another Action",
@@ -36,33 +38,70 @@
     },
     "taskList": [
       {
-        "title": "Update the Documentation",
-        "description": "Dwuamish Head, Seattle, WA 8:47 AM",
-        "done": false
-      },
-      {
-        "title": "GDPR Compliance",
-        "description": "The GDPR is a regulation that requires businesses to protect the personal data and privacy of Europe citizens for transactions that occur within EU member states.",
+        "title": "Ana Silva",
+        "description": "Contacto: 968******",
         "done": true
       },
       {
-        "title": "Solve the issues",
-        "description": "Fifty percent of all respondents said they would be more likely to shop at a company",
+        "title": "Pedro Pontes",
+        "description": "Contacto: 968******",
         "done": false
       },
       {
-        "title": "Release v2.0.0",
-        "description": "Ra Ave SW, Seattle, WA 98116, SUA 11:19 AM",
+        "title": "Afonso Pinheiro",
+        "description": "Contacto: 968******",
+        "done": true
+      },
+      {
+        "title": "Rogério Branco",
+        "description": "Contacto: 968******",
+        "done": true
+      },
+      {
+        "title": "Manuel Passos",
+        "description": "Contacto: 968******",
         "done": false
       },
       {
-        "title": "Export the processed files",
-        "description": "The report also shows that consumers will not easily forgive a company once a breach exposing their personal data occurs.",
+        "title": "João Ferreira",
+        "description": "Contacto: 968******",
         "done": false
       },
       {
-        "title": "Arival at export process",
-        "description": "Capitol Hill, Seattle, WA 12:34 AM",
+        "title": "Diogo Leite",
+        "description": "Contacto: 968******",
+        "done": true
+      }
+    ],
+    "taskList1": [
+      {
+        "title": "Mesas",
+        "description": "Quantidade: 55",
+        "done": true
+      },
+      {
+        "title": "Carrinhas",
+        "description": "Quantidade: 5",
+        "done": false
+      },
+      {
+        "title": "Sacos",
+        "description": "Quantidade: 100",
+        "done": true
+      },
+      {
+        "title": "Caixas",
+        "description": "Quantidade: 40",
+        "done": true
+      },
+      {
+        "title": "Panfletos",
+        "description": "Quantidade: 1250",
+        "done": false
+      },
+      {
+        "title": "Cartazes",
+        "description": "Quantidade: 25",
         "done": false
       }
     ]
