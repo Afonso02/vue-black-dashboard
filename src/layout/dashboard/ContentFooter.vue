@@ -3,11 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 d-flex justify-content-center">
-          <a>
+          <a :href="getAcaoUrl()">
             <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 20px;">📱</button>
           </a>
           <a :href="getDashboardUrl()">
-            <button class="btn btn-primary mr-1" style="font-size: 20px; padding: 20px;">📊</button>
+            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 20px;">📊</button>
           </a>
           <a :href="getMapsUrl()">
             <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 20px;">🏠</button>
@@ -33,6 +33,9 @@ export default {
     },
     getMapsUrl() {
       return this.$router.resolve({ name: 'Gerir Iniciativa no Terreno' }).href;
+    },
+    getAcaoUrl() {
+      return this.$router.resolve({ name: 'Documentar Ação' }).href;
     },
     getProfileUrl() {
       return this.$router.resolve({ name: 'Perfil' }).href;

@@ -35,7 +35,7 @@ const routes = [
       },
       {
         path: "notifications",
-        name: "notifications",
+        name: "Ajudas Humanitárias",
         component: Notifications,
       },
       {
@@ -50,12 +50,12 @@ const routes = [
       },
       {
         path: "typography",
-        name: "typography",
+        name: "Login",
         component: Typography,
       },
       {
         path: "table-list",
-        name: "table-list",
+        name: "Documentar Ação",
         component: TableList,
       },
     ],

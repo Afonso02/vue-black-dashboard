@@ -1,32 +1,5 @@
 <template>
-  <div class="row">
-    <div class="col-12">
-      <card :title="table1.title">
-        <div class="table-responsive">
-          <base-table
-            :data="table1.data"
-            :columns="table1.columns"
-            thead-classes="text-primary"
-          >
-          </base-table>
-        </div>
-      </card>
-    </div>
-
-    <div class="col-12">
-      <card class="card-plain">
-        <div class="table-full-width table-responsive">
-          <base-table
-            :title="table2.title"
-            :sub-title="table2.subTitle"
-            :data="table2.data"
-            :columns="table2.columns"
-          >
-          </base-table>
-        </div>
-      </card>
-    </div>
-  </div>
+  
 </template>
 <script>
 import { BaseTable } from "@/components";

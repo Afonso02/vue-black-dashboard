@@ -9,16 +9,6 @@
           class="navbar-toggle d-inline"
           :class="{ toggled: $sidebar.showSidebar }"
         >
-          <button
-            type="button"
-            class="navbar-toggler"
-            aria-label="Navbar toggle button"
-            @click="toggleSidebar"
-          >
-            <span class="navbar-toggler-bar bar1"></span>
-            <span class="navbar-toggler-bar bar2"></span>
-            <span class="navbar-toggler-bar bar3"></span>
-          </button>
         </div>
         <a class="navbar-brand" href="#pablo">{{ routeName }}</a>
       </div>

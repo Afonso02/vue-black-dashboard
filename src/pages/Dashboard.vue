@@ -147,7 +147,7 @@ export default {
           labels: ["JUL", "AGO", "SET", "OUT", "NOV"],
           datasets: [
             {
-              label: "My First dataset",
+              label: "",
               fill: true,
               borderColor: config.colors.danger,
               borderWidth: 2,

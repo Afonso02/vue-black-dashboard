@@ -1,171 +1,81 @@
 <template>
-  <div class="row">
-    <div class="col-md-6">
-      <card>
-        <h4 slot="header">Notifications Style</h4>
-        <base-alert type="info">
-          <span>This is a plain notification</span>
-        </base-alert>
-        <base-alert type="info" dismissible>
-          <span>This is a plain notification</span>
-        </base-alert>
-        <base-alert type="info" dismissible with-icon>
-          <span data-notify="icon" class="tim-icons icon-bell-55"></span>
-          <span data-notify="message"
-            >This is a notification with close button and icon.</span
-          >
-        </base-alert>
-        <base-alert type="info" dismissible with-icon>
-          <span data-notify="icon" class="tim-icons icon-bell-55"></span>
-          <span data-notify="message"
-            >This is a notification with close button and icon and have many
-            lines. You can see that the icon and the close button are always
-            vertically aligned. This is a beautiful notification. So you don't
-            have to worry about the style.</span
-          >
-        </base-alert>
-      </card>
-    </div>
-    <div class="col-md-6">
-      <card>
-        <h4 slot="header">Notifications states</h4>
-        <base-alert type="primary" dismissible>
-          <span
-            ><b> Primary - </b> This is a regular notification made with
-            ".alert-primary"</span
-          >
-        </base-alert>
-        <base-alert type="info" dismissible>
-          <span
-            ><b> Info - </b> This is a regular notification made with
-            ".alert-info"</span
-          >
-        </base-alert>
-        <base-alert type="success" dismissible>
-          <span
-            ><b> Success - </b> This is a regular notification made with
-            ".alert-success"</span
-          >
-        </base-alert>
-        <base-alert type="warning" dismissible>
-          <span
-            ><b> Warning - </b> This is a regular notification made with
-            ".alert-warning"</span
-          >
-        </base-alert>
-        <base-alert type="danger" dismissible>
-          <span
-            ><b> Danger - </b> This is a regular notification made with
-            ".alert-danger"</span
-          >
-        </base-alert>
-      </card>
-    </div>
-    <div class="col-md-12">
-      <card>
-        <div class="places-buttons">
-          <div class="row">
-            <div class="col-md-6 ml-auto mr-auto text-center">
-              <h4 class="card-title">
-                Notifications Places
-                <p class="category">Click to view notifications</p>
-              </h4>
+  <div class="wrapper human_wrapper">
+        <div class="container p-0 mt-0 pb-5">
+            <div class="header d-flex align-items-center mb-3 px-4 pt-5">
+                <i class="fa-solid fa-bars-staggered"></i>
+                <h4 class="ms-5">Ajudas Humanitárias</h4>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-8 ml-auto mr-auto">
-              <div class="row">
-                <div class="col-md-4">
-                  <base-button
-                    type="primary"
-                    block
-                    @click="notifyVue('top', 'left')"
-                    >Top Left</base-button
-                  >
+            <div class="card shadow pt-3">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6>AJUDAS</h6>
+                    <div class="icons">
+                        <i class="fa-solid fa-gear"></i>
+                        <i class="fa-solid fa-minus"></i>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                  <base-button
-                    type="primary"
-                    block
-                    @click="notifyVue('top', 'center')"
-                    >Top Center</base-button
-                  >
+                <div class="card-body">
+                    <div class="card p-2 box-card">
+                        <div class="card-header text-end">
+                            <h6>Envio de Mantimentos</h6>
+                        </div>
+                        <div class="card-content d-flex align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/img1.png" alt="">
+                            </div>
+                            <div class="content ms-2">
+                                <i class="fa fa-clock"></i><span class="ms-2">9h</span> <br>
+                                <i class="fa fa-users"></i><span class="ms-2">10-15</span> <br>
+                                <i class="fa fa-download"></i><span class="ms-2">04.03.2024</span> <br>
+                                <i class="fa fa-location"></i><span class="ms-2">Guiné Bissau</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                  <base-button
-                    type="primary"
-                    block
-                    @click="notifyVue('top', 'right')"
-                    >Top Right</base-button
-                  >
+
+                <div class="card-body">
+                    <div class="card p-2 box-card">
+                        <div class="card-header text-end">
+                            <h6>Voluntariado em Africa</h6>
+                        </div>
+                        <div class="card-content d-flex align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/img2.png" alt="">
+                            </div>
+                            <div class="content ms-2">
+                                <i class="fa fa-clock"></i><span class="ms-2">13h</span> <br>
+                                <i class="fa fa-users"></i><span class="ms-2">10-20</span> <br>
+                                <i class="fa fa-download"></i><span class="ms-2">01.04.2024</span> <br>
+                                <i class="fa fa-location"></i><span class="ms-2">São Tomé e Príncipe</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                <div class="card-body">
+                    <div class="card p-2 box-card">
+                        <div class="card-header text-end">
+                            <h6>Banco Alimentar</h6>
+                        </div>
+                        <div class="card-content d-flex align-items-center">
+                            <div class="image">
+                                <img src="/assets/images/img3.png" alt="">
+                            </div>
+                            <div class="content ms-2">
+                                <i class="fa fa-clock"></i><span class="ms-2">16h</span> <br>
+                                <i class="fa fa-users"></i><span class="ms-2">14-20</span> <br>
+                                <i class="fa fa-download"></i><span class="ms-2">02.02.2024</span> <br>
+                                <i class="fa fa-location"></i><span class="ms-2">Porto, Portugal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shadow-color">
+                    <img src="/assets/images/shadow.png" alt="">
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-8 ml-auto mr-auto">
-              <div class="row">
-                <div class="col-md-4">
-                  <base-button
-                    type="primary"
-                    block
-                    @click="notifyVue('bottom', 'left')"
-                    >Bottom Left</base-button
-                  >
-                </div>
-                <div class="col-md-4">
-                  <base-button
-                    type="primary"
-                    block
-                    @click="notifyVue('bottom', 'center')"
-                    >Bottom Center</base-button
-                  >
-                </div>
-                <div class="col-md-4">
-                  <base-button
-                    type="primary"
-                    block
-                    @click="notifyVue('bottom', 'right')"
-                    >Bottom Right</base-button
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </card>
     </div>
-  </div>
 </template>
 <script>
-import NotificationTemplate from "./Notifications/NotificationTemplate";
-import { BaseAlert } from "@/components";
-
-export default {
-  components: {
-    BaseAlert,
-  },
-  data() {
-    return {
-      type: ["", "info", "success", "warning", "danger"],
-      notifications: {
-        topCenter: false,
-      },
-    };
-  },
-  methods: {
-    notifyVue(verticalAlign, horizontalAlign) {
-      const color = Math.floor(Math.random() * 4 + 1);
-      this.$notify({
-        component: NotificationTemplate,
-        icon: "tim-icons icon-bell-55",
-        horizontalAlign: horizontalAlign,
-        verticalAlign: verticalAlign,
-        type: this.type[color],
-        timeout: 0,
-      });
-    },
-  },
-};
 </script>
 <style></style>
