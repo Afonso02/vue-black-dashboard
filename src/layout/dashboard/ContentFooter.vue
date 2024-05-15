@@ -4,22 +4,23 @@
       <div class="row">
         <div class="col-md-6 d-flex justify-content-center">
           <a :href="getAcaoUrl()">
-            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 20px;">📱</button>
+            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 10px;">📱</button>
           </a>
           <a :href="getDashboardUrl()">
-            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 20px;">📊</button>
+            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 10px;">📊</button>
           </a>
           <a :href="getMapsUrl()">
-            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 20px;">🏠</button>
+            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 10px;">🏠</button>
           </a>
           <a :href="getProfileUrl()">
-            <button class="btn btn-primary" style="font-size: 20px; padding: 20px;">👤</button>
+            <button class="btn btn-primary" style="font-size: 20px; padding: 10px;">👤</button>
           </a>
         </div>
       </div>
     </div>
   </footer>
 </template>
+
 <script>
 export default {
   data() {
@@ -43,8 +44,15 @@ export default {
   },
 };
 </script>
+
 <style>
 footer.footer {
   background-color: #1e1e2f; /* Add the desired color here */
+  position: fixed; /* Position the footer fixed */
+  bottom: 0; /* Place it at the bottom of the viewport */
+  width: 100%; /* Make it full width */
+  z-index: 999; /* Set z-index to ensure it stays on top of other content */
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 </style>
