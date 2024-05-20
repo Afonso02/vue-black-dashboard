@@ -46,24 +46,29 @@
     </side-bar>
     <div class="main-panel">
       <top-navbar></top-navbar>
-
       <dashboard-content @click.native="toggleSidebar"> </dashboard-content>
-
-      <content-footer></content-footer>
+      <!-- Conditionally render footer -->
+      <content-footer v-if="showFooter"></content-footer>
     </div>
   </div>
 </template>
-<style lang="scss"></style>
+
 <script>
 import TopNavbar from "./TopNavbar.vue";
 import ContentFooter from "./ContentFooter.vue";
 import DashboardContent from "./Content.vue";
-import MobileMenu from "./MobileMenu";
+
 export default {
   components: {
     TopNavbar,
     ContentFooter,
     DashboardContent,
+  },
+  computed: {
+    showFooter() {
+      // Check if the current route is not Typography
+      return this.$route.name !== 'Login' && this.$route.name !== 'Ajudas Humanitárias';
+    }
   },
   methods: {
     toggleSidebar() {
@@ -74,3 +79,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+/* Add your styles here */
+</style>

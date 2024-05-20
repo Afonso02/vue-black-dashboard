@@ -13,7 +13,13 @@
             <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 10px;">🏠</button>
           </a>
           <a :href="getProfileUrl()">
-            <button class="btn btn-primary" style="font-size: 20px; padding: 10px;">👤</button>
+            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 10px;">👤</button>
+          </a>
+          <a :href="getAjudasUrl()">
+            <button class="btn btn-primary mr-4" style="font-size: 20px; padding: 10px;">📋</button>
+          </a>
+          <a :href="getLoginUrl()">
+            <button class="btn btn-primary" style="font-size: 20px; padding: 10px;">🔐</button>
           </a>
         </div>
       </div>
@@ -37,6 +43,12 @@ export default {
     },
     getAcaoUrl() {
       return this.$router.resolve({ name: 'Documentar Ação' }).href;
+    },
+    getAjudasUrl() {
+      return this.$router.resolve({ name: 'Ajudas Humanitárias' }).href;
+    },
+    getLoginUrl() {
+      return this.$router.resolve({ name: 'Login' }).href;
     },
     getProfileUrl() {
       return this.$router.resolve({ name: 'Perfil' }).href;
