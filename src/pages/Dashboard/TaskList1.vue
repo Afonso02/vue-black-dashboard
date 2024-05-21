@@ -24,7 +24,8 @@ export default {
   },
   computed: {
     tableData() {
-      return this.$t("dashboard.taskList1");
+      let dataStorage =  JSON.parse(localStorage.getItem('dashboardData'));
+      return dataStorage.taskList1
     },
   },
 };

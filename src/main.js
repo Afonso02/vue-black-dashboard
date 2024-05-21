@@ -26,7 +26,6 @@ Vue.use(VueRouter);
 Vue.use(RouterPrefetch);
 // Save dashboard data to local storage
 const dashboardData = {
-  dashboard: {
     completedTasks: "Quantidade distribuída",
     dailySales: "Daily Sales",
     performance: "Indicadores",
@@ -132,19 +131,7 @@ const dashboardData = {
         done: false
       }
     ]
-  },
-  sidebar: {
-    title: "Creative Tim",
-    shortTitle: "CT",
-    dashboard: "dashboard",
-    icons: "Icons",
-    maps: "Maps",
-    notifications: "Notifications",
-    userProfile: "User Profile",
-    tableList: "Table List",
-    typography: "Typography",
-    rtlSupport: "RTL Support"
-  }
+  
 };
 
 // Save the data to local storage
