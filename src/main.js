@@ -1,21 +1,8 @@
-/*
- =========================================================
- * Vue Black Dashboard - v1.1.3
- =========================================================
 
- * Product Page: https://www.creative-tim.com/product/black-dashboard
- * Copyright 2024 Creative Tim (http://www.creative-tim.com)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
 import Vue from "vue";
 import VueRouter from "vue-router";
 import RouterPrefetch from "vue-router-prefetch";
 import App from "./App";
-// TIP: change to import router from "./router/starterRouter"; to start with a clean layout
 import router from "./router/index";
 
 import BlackDashboard from "./plugins/blackDashboard";
@@ -36,6 +23,7 @@ const dashboardData = {
     tasks1: "Confirmação",
     today: "Nome",
     today1: "Material",
+    doacoes:"50Kg de arroz, 40Kg de massa, ...",
     dropdown: {
       action: "Action",
       anotherAction: "Another Action",
@@ -66,69 +54,69 @@ const dashboardData = {
       {
         title: "Ana Silva",
         description: "Contacto: 968******",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Pedro Pontes",
         description: "Contacto: 968******",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Afonso Pinheiro",
         description: "Contacto: 968******",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Rogério Branco",
         description: "Contacto: 968******",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Manuel Passos",
         description: "Contacto: 968******",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "João Ferreira",
         description: "Contacto: 968******",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Diogo Leite",
         description: "Contacto: 968******",
-        done: false
+        presenca: "Ausente"
       }
     ],
     taskList1: [
       {
         title: "Mesas",
         description: "Quantidade: 55",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Carrinhas",
         description: "Quantidade: 5",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Sacos",
         description: "Quantidade: 100",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Caixas",
         description: "Quantidade: 40",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Panfletos",
         description: "Quantidade: 1250",
-        done: false
+        presenca: "Ausente"
       },
       {
         title: "Cartazes",
         description: "Quantidade: 25",
-        done: false
+        presenca: "Ausente"
       }
     ]
   

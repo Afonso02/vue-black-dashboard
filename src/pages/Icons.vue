@@ -65,7 +65,7 @@ export default {
             };
             localStorage.setItem('dados', JSON.stringify(data));
             alert('Dados guardados com sucesso!');
-            this.$router.push({ name: 'Ajudas Humanitárias' });
+            this.$router.push({ name: 'Login' });
         }
     }
 };

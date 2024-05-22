@@ -50,6 +50,9 @@ export default {
     getLoginUrl() {
       return this.$router.resolve({ name: 'Login' }).href;
     },
+    getAcaoUrl() {
+      return this.$router.resolve({ name: 'Ação' }).href;
+    },
     getProfileUrl() {
       return this.$router.resolve({ name: 'Perfil' }).href;
     }

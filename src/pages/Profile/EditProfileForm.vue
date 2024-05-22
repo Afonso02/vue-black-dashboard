@@ -25,8 +25,16 @@
         >
         </base-input>
       </div>
+      <div class="col-md-4 pl-md-1">
+        <base-input
+          label="Palavrapass"
+          type="tel"
+          v-model="model.pass"
+        >
+        </base-input>
+      </div>
     </div>
-    <base-button slot="footer" type="primary" fill @click="guardarDados">Guardar</base-button>
+    <base-button slot="footer" type="primary" fill @click="guardarDados()">Guardar</base-button>
   </card>
 </template>
 
@@ -39,7 +47,8 @@ export default {
         return {
           nome: '',
           email: '',
-          numero: ''
+          numero: '',
+          pass: ''
         };
       },
     },
@@ -54,6 +63,7 @@ export default {
         this.model.nome = dados.nome;
         this.model.email = dados.email;
         this.model.numero = dados.numero;
+        this.model.pass = dados.pass;
       }
     },
     guardarDados() {

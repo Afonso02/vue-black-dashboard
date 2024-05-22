@@ -3,10 +3,10 @@
     <div class="col-lg-6 col-md-12">
       <card type="tasks" :header-classes="{ 'text-right': isRTL }">
         <template slot="header">
-          <h6 class="title d-inline">
+          <h6 style="padding-left: 12px" class="title d-inline">
             {{ $t("dashboard.tasks") }}
           </h6>
-          <p class="card-category d-inline">{{ $t("dashboard.today") }}</p>
+          <p style="padding-left: 46px" class="card-category d-inline">{{ $t("dashboard.today") }}</p>
         </template>
         <div class="table-full-width table-responsive">
           <task-list></task-list>
@@ -19,7 +19,7 @@
           <h6 class="title d-inline">
             {{ $t("dashboard.tasks1") }}
           </h6>
-          <p class="card-category d-inline">{{ $t("dashboard.today1") }}</p>
+          <p style="padding-left: 38px" class="card-category d-inline">{{ $t("dashboard.today1") }}</p>
         </template>
         <div class="table-full-width table-responsive">
           <TaskList1></TaskList1>
@@ -27,45 +27,58 @@
       </card>
     </div>
     <div class="col-lg-6 col-md-12">
-      <card type="tasks" :header-classes="{ 'text-right': isRTL }">
+      <card :header-classes="{ 'text-right': isRTL }">
         <div class="col-md-3 px-md-1">
-          <base-input
-            label="Descrição"
-            value="Banco Alimentar - Porto"
-          >
-          </base-input>
+          <h3>Banco Alimentar - Porto</h3>
         </div>
         <div class="col-md-3 px-md-1">
-          <base-input
-            label="Responsável"
-            value="José Luís"
-          >
-          </base-input>
+          <p class="title">Responável:</p>
+          <p class="title">{{ model.nome }}</p>
+          <br>
         </div>
         <div class="col-md-3 px-md-1">
           <base-input
             label="Doações"
-            value="..."
+            placeholder="Escrever aqui as doações."
+            v-model="model1.doacoes"
           >
           </base-input>
         </div>
         <div class="col-md-3 px-md-1">
-          <button onclick="saveTableData()" class="btn btn-primary" style="font-size: 15px; padding: 10px;">Guardar Dados</button>
+          <button @click="guardarDadosDoacoes" class="btn btn-primary" style="font-size: 15px; padding: 10px;">Guardar Dados</button>
         </div>
       </card>
     </div>
   </div>
 </template>
+
 <script>
 import LineChart from "@/components/Charts/LineChart";
 import BarChart from "@/components/Charts/BarChart";
-import * as chartConfigs from "@/components/Charts/config";
 import TaskList from "./Dashboard/TaskList";
 import TaskList1 from "./Dashboard/TaskList1";
 import UserTable from "./Dashboard/UserTable";
 import config from "@/config";
 
 export default {
+  props: {
+    model: {
+      type: Object,
+      default: () => {
+        return {
+          nome: ''
+        };
+      },
+    },
+    model1: {
+      type: Object,
+      default: () => {
+        return {
+          doacoes: ''
+        };
+      },
+    },
+  },
   components: {
     LineChart,
     BarChart,
@@ -75,111 +88,11 @@ export default {
   },
   data() {
     return {
-      bigLineChart: {
-        allData: [
-          [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100],
-          [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120],
-          [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130],
-        ],
-        activeIndex: 0,
-        chartData: {
-          datasets: [{}],
-          labels: [
-            "JAN",
-            "FEB",
-            "MAR",
-            "APR",
-            "MAY",
-            "JUN",
-            "JUL",
-            "AUG",
-            "SEP",
-            "OCT",
-            "NOV",
-            "DEC",
-          ],
-        },
-        extraOptions: chartConfigs.purpleChartOptions,
-        gradientColors: config.colors.primaryGradient,
-        gradientStops: [1, 0.4, 0],
-        categories: [],
-      },
-      purpleLineChart: {
-        extraOptions: chartConfigs.purpleChartOptions,
-        chartData: {
-          labels: ["JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
-          datasets: [
-            {
-              label: "Data",
-              fill: true,
-              borderColor: config.colors.primary,
-              borderWidth: 2,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              pointBackgroundColor: config.colors.primary,
-              pointBorderColor: "rgba(255,255,255,0)",
-              pointHoverBackgroundColor: config.colors.primary,
-              pointBorderWidth: 20,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 15,
-              pointRadius: 4,
-              data: [80, 100, 70, 80, 120, 80],
-            },
-          ],
-        },
-        gradientColors: config.colors.primaryGradient,
-        gradientStops: [1, 0.2, 0],
-      },
-      greenLineChart: {
-        extraOptions: chartConfigs.greenChartOptions,
-        chartData: {
-          labels: ["JUL", "AUG", "SEP", "OCT", "NOV"],
-          datasets: [
-            {
-              label: "My First dataset",
-              fill: true,
-              borderColor: config.colors.danger,
-              borderWidth: 2,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              pointBackgroundColor: config.colors.danger,
-              pointBorderColor: "rgba(255,255,255,0)",
-              pointHoverBackgroundColor: config.colors.danger,
-              pointBorderWidth: 20,
-              pointHoverRadius: 4,
-              pointHoverBorderWidth: 15,
-              pointRadius: 4,
-              data: [90, 27, 60, 12, 80],
-            },
-          ],
-        },
-        gradientColors: [
-          "rgba(66,134,121,0.15)",
-          "rgba(66,134,121,0.0)",
-          "rgba(66,134,121,0)",
-        ],
-        gradientStops: [1, 0.4, 0],
-      },
-      blueBarChart: {
-        extraOptions: chartConfigs.barChartOptions,
-        chartData: {
-          labels: ["USA", "GER", "AUS", "UK", "RO", "BR"],
-          datasets: [
-            {
-              label: "Countries",
-              fill: true,
-              borderColor: config.colors.info,
-              borderWidth: 2,
-              borderDash: [],
-              borderDashOffset: 0.0,
-              data: [53, 20, 10, 80, 100, 45],
-            },
-          ],
-        },
-        gradientColors: config.colors.primaryGradient,
-        gradientStops: [1, 0.4, 0],
-      },
     };
+  },
+  mounted() {
+    this.carregarDados();
+    this.carregarDadosDoacoes();
   },
   computed: {
     enableRTL() {
@@ -193,52 +106,28 @@ export default {
     },
   },
   methods: {
-    initBigChart(index) {
-      let chartData = {
-        datasets: [
-          {
-            fill: true,
-            borderColor: config.colors.primary,
-            borderWidth: 2,
-            borderDash: [],
-            borderDashOffset: 0.0,
-            pointBackgroundColor: config.colors.primary,
-            pointBorderColor: "rgba(255,255,255,0)",
-            pointHoverBackgroundColor: config.colors.primary,
-            pointBorderWidth: 20,
-            pointHoverRadius: 4,
-            pointHoverBorderWidth: 15,
-            pointRadius: 4,
-            data: this.bigLineChart.allData[index],
-          },
-        ],
-        labels: [
-          "JAN",
-          "FEB",
-          "MAR",
-          "APR",
-          "MAY",
-          "JUN",
-          "JUL",
-          "AUG",
-          "SEP",
-          "OCT",
-          "NOV",
-          "DEC",
-        ],
-      };
-      this.$refs.bigChart.updateGradients(chartData);
-      this.bigLineChart.chartData = chartData;
-      this.bigLineChart.activeIndex = index;
+    carregarDados() {
+      const dados = JSON.parse(localStorage.getItem('dados'));
+      if (dados) {
+        this.model.nome = dados.nome;
+      }
     },
-  },
-  mounted() {
-    this.i18n = this.$i18n;
-    if (this.enableRTL) {
-      this.i18n.locale = "ar";
-      this.$rtl.enableRTL();
-    }
-    this.initBigChart(0);
+    guardarDados() {
+      localStorage.setItem('dados', JSON.stringify(this.model));
+      alert('Dados guardados com sucesso!');
+    },
+    carregarDadosDoacoes() {
+      const dashboardData = JSON.parse(localStorage.getItem('dashboardData'));
+      if (dashboardData) {
+        this.model1.doacoes = dashboardData.doacoes;
+      }
+    },
+    guardarDadosDoacoes() {
+      let dashboardData = JSON.parse(localStorage.getItem('dashboardData'));
+      dashboardData.doacoes = this.model1.doacoes;
+      localStorage.setItem('dashboardData', JSON.stringify(dashboardData));
+      alert('Dados guardados com sucesso!');
+    },
   },
   beforeDestroy() {
     if (this.$rtl.isRTL) {
@@ -248,4 +137,5 @@ export default {
   },
 };
 </script>
+
 <style></style>

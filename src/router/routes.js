@@ -16,6 +16,8 @@ const Typography = () =>
   import(/* webpackChunkName: "common" */ "@/pages/Typography.vue");
 const TableList = () =>
   import(/* webpackChunkName: "common" */ "@/pages/TableList.vue");
+const Acao = () =>
+  import(/* webpackChunkName: "common" */ "@/pages/Acao.vue");
 
 const routes = [
   {
@@ -32,6 +34,11 @@ const routes = [
         path: "profile",
         name: "Perfil",
         component: Profile,
+      },
+      {
+        path: "acao",
+        name: "Ação",
+        component: Acao,
       },
       {
         path: "notifications",

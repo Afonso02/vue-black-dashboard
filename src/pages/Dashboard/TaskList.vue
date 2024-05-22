@@ -1,8 +1,10 @@
 <template>
   <base-table :data="tableData" thead-classes="text-primary">
-    <template slot-scope="{ row }">
+    <template slot-scope="{ row, index }">
       <td>
-        <base-checkbox @change="saveTableData()" v-model="row.done"></base-checkbox>
+        <base-button @click="presente(row.title)" style="font-size: 12px; padding: 10px;">✅</base-button>
+        <base-button @click="ausente(row.title)" style="font-size: 12px; padding: 10px;">❌</base-button>
+        <p class="text-muted">{{ row.presenca }}</p>
       </td>
       <td>
         <p class="title">{{ row.title }}</p>
@@ -11,22 +13,58 @@
     </template>
   </base-table>
 </template>
+
 <script>
-import { BaseTable } from "@/components";
+import BaseTable from "@/components/BaseTable";
+
 export default {
   components: {
     BaseTable,
   },
-  computed: {
-    tableData() {
-      let dataStorage =  JSON.parse(localStorage.getItem('dashboardData'));
-      return dataStorage.taskList
-    },
+  data() {
+    return {
+      tableData: [],
+    };
+  },
+  mounted() {
+    this.loadTableData();
   },
   methods: {
-    saveTableData() {
-      dataStorage.taskList = data;
-      localStorage.setItem('dashboardData', JSON.stringify(dataStorage));
+    loadTableData() {
+      let dataStorage = JSON.parse(localStorage.getItem('dashboardData'));
+      if (dataStorage && dataStorage.taskList) {
+        this.tableData = dataStorage.taskList;
+      }
+    },
+    presente(title) {
+      let dataStorage = JSON.parse(localStorage.getItem('dashboardData'));
+      if (dataStorage && dataStorage.taskList) {
+        const task = dataStorage.taskList.find(task => task.title === title);
+        if (task) {
+          task.presenca = "Presente";
+          localStorage.setItem('dashboardData', JSON.stringify(dataStorage));
+          this.loadTableData();
+        } else {
+          console.error(`Task with title ${title} not found`);
+        }
+      } else {
+        console.error('Erro ao acessar o localStorage ou taskList');
+      }
+    },
+    ausente(title) {
+      let dataStorage = JSON.parse(localStorage.getItem('dashboardData'));
+      if (dataStorage && dataStorage.taskList) {
+        const task = dataStorage.taskList.find(task => task.title === title);
+        if (task) {
+          task.presenca = "Ausente";
+          localStorage.setItem('dashboardData', JSON.stringify(dataStorage));
+          this.loadTableData();
+        } else {
+          console.error(`Task with title ${title} not found`);
+        }
+      } else {
+        console.error('Erro ao acessar o localStorage ou taskList');
+      }
     }
   }
 };

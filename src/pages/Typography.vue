@@ -24,7 +24,7 @@
               </div>
               <div class="d-flex mb-3 justify-content-between">
                 <div class="forget-password">
-                  <span>Forgot password?</span>
+                  <span>Esqueceu-se da palavrapass?</span>
                 </div>
               </div>
               <div>

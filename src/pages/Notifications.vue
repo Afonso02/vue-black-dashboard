@@ -9,7 +9,7 @@
                         </div>
                         <div class="card-content d-flex align-items-center">
                             <div class="image">
-                                <img src="img1.png" alt="">
+                                <img src="/assets/images/image.png" alt="" style="width: 89px; height: 89px;">
                             </div>
                             <div class="content ms-2">
                                 <i class="fa fa-clock"></i><span class="ms-2">9h</span> <br>
@@ -68,7 +68,6 @@
                     </div>
                 </div>
                 <div class="shadow-color">
-                    <img src="/assets/images/shadow.png" alt="">
                 </div>
             </div>
         </div>
@@ -83,4 +82,10 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+</style>
