@@ -5,7 +5,7 @@
                 <div class="card-body">
                     <div class="card p-2 box-card">
                         <div class="card-header text-end">
-                            <h6>Envio de Mantimentos</h6>
+                            <h6>Banco Alimentar - Porto</h6>
                         </div>
                         <div class="card-content d-flex align-items-center">
                             <div class="image">
@@ -14,8 +14,8 @@
                             <div class="content ms-2">
                                 <i class="fa fa-clock"></i><span class="ms-2">9h</span> <br>
                                 <i class="fa fa-users"></i><span class="ms-2">10-15</span> <br>
-                                <i class="fa fa-download"></i><span class="ms-2">04.03.2024</span> <br>
-                                <i class="fa fa-location"></i><span class="ms-2">Guiné Bissau</span>
+                                <i class="fa fa-download"></i><span class="ms-2">04.06.2024</span> <br>
+                                <i class="fa fa-location"></i><span class="ms-2">Porto, Portugal</span>
                             </div>
                         </div>
                         <a :href="getDashboardUrl()">

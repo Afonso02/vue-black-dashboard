@@ -14,7 +14,8 @@ export default {
   },
   computed: {
     table() {
-      return this.$t("dashboard.usersTable");
+      let dataStorage =  JSON.parse(localStorage.getItem('dashboardData'));
+      return dataStorage.usersTable
     },
   },
 };

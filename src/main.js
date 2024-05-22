@@ -66,7 +66,7 @@ const dashboardData = {
       {
         title: "Ana Silva",
         description: "Contacto: 968******",
-        done: true
+        done: false
       },
       {
         title: "Pedro Pontes",
@@ -76,12 +76,12 @@ const dashboardData = {
       {
         title: "Afonso Pinheiro",
         description: "Contacto: 968******",
-        done: true
+        done: false
       },
       {
         title: "Rogério Branco",
         description: "Contacto: 968******",
-        done: true
+        done: false
       },
       {
         title: "Manuel Passos",
@@ -96,14 +96,14 @@ const dashboardData = {
       {
         title: "Diogo Leite",
         description: "Contacto: 968******",
-        done: true
+        done: false
       }
     ],
     taskList1: [
       {
         title: "Mesas",
         description: "Quantidade: 55",
-        done: true
+        done: false
       },
       {
         title: "Carrinhas",
@@ -113,12 +113,12 @@ const dashboardData = {
       {
         title: "Sacos",
         description: "Quantidade: 100",
-        done: true
+        done: false
       },
       {
         title: "Caixas",
         description: "Quantidade: 40",
-        done: true
+        done: false
       },
       {
         title: "Panfletos",

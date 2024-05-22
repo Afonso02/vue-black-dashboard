@@ -13,14 +13,14 @@
         <div class="card-body">
           <h4 class="card-title">Login</h4>
           <div class="login-form">
-            <form action="">
+            <form @submit.prevent="login">
               <div class="form-group mb-5">
                 <span><i class="fa fa-envelope"></i></span>
-                <input type="text" class="form-control" placeholder="Email">
+                <input v-model="email" type="email" class="form-control" placeholder="Email" required>
               </div>
               <div class="form-group mb-3">
                 <span><i class="fa fa-lock"></i></span>
-                <input type="text" class="form-control" placeholder="Password">
+                <input v-model="password" type="password" class="form-control" placeholder="Password" required>
               </div>
               <div class="d-flex mb-3 justify-content-between">
                 <div class="forget-password">
@@ -28,8 +28,9 @@
                 </div>
               </div>
               <div>
-                <router-link :to="{ name: 'Ajudas Humanitárias' }">
-                  <button class="login-btn btn">Login</button>
+                <button type="submit" class="login-btn btn">Login</button>
+                <router-link :to="{ name: 'Registar' }">
+                  <button class="login-btn btn">Register</button>
                 </router-link>
               </div>
             </form>
@@ -41,14 +42,25 @@
       </div>
     </div>
   </div>
-
 </template>
+
 <script>
 export default {
-  methods: {
-    getAjudasUrl() {
-      return this.$router.resolve({ name: 'Ajudas Humanitárias' }).href;
-    }
+  data() {
+    return {
+      email: '',
+      password: ''
+    };
   },
+  methods: {
+    login() {
+      if (!this.email || !this.password) {
+        alert('Por favor, preencha todos os campos!');
+        return;
+      }
+      console.log('Email:', this.email);
+      console.log('Senha:', this.password);
+    }
+  }
 };
 </script>

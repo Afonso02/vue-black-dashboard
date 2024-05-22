@@ -24,7 +24,7 @@ export default {
   computed: {
     showFooter() {
       // Check if the current route is not Typography
-      return this.$route.name !== 'Login' && this.$route.name !== 'Ajudas Humanitárias';
+      return this.$route.name !== 'Login' && this.$route.name !== 'Ajudas Humanitárias' && this.$route.name !== 'Registar';
     }
   },
   methods: {

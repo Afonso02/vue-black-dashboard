@@ -4,7 +4,7 @@
       <card type="tasks" :header-classes="{ 'text-right': isRTL }">
         <template slot="header">
           <h6 class="title d-inline">
-            {{ $t("dashboard.tasks", { count: 5 }) }}
+            {{ $t("dashboard.tasks") }}
           </h6>
           <p class="card-category d-inline">{{ $t("dashboard.today") }}</p>
         </template>
@@ -17,7 +17,7 @@
       <card type="tasks" :header-classes="{ 'text-right': isRTL }">
         <template slot="header">
           <h6 class="title d-inline">
-            {{ $t("dashboard.tasks1", { count: 5 }) }}
+            {{ $t("dashboard.tasks1") }}
           </h6>
           <p class="card-category d-inline">{{ $t("dashboard.today1") }}</p>
         </template>
@@ -48,6 +48,9 @@
             value="..."
           >
           </base-input>
+        </div>
+        <div class="col-md-3 px-md-1">
+          <button onclick="saveTableData()" class="btn btn-primary" style="font-size: 15px; padding: 10px;">Guardar Dados</button>
         </div>
       </card>
     </div>

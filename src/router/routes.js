@@ -40,7 +40,7 @@ const routes = [
       },
       {
         path: "icons",
-        name: "icons",
+        name: "Registar",
         component: Icons,
       },
       {

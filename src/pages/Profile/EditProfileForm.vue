@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-mutating-props -->
 <template>
   <card>
     <h5 slot="header" class="title">Editar Perfil</h5>
@@ -6,8 +5,7 @@
       <div class="col-md-3 px-md-1">
         <base-input
           label="Nome"
-          placeholder="Username"
-          v-model="model.username"
+          v-model="model.nome"
         >
         </base-input>
       </div>
@@ -15,7 +13,6 @@
         <base-input
           label="Email"
           type="email"
-          placeholder="xxx@email.com"
           v-model="model.email"
         >
         </base-input>
@@ -23,26 +20,50 @@
       <div class="col-md-4 pl-md-1">
         <base-input
           label="Telemóvel"
-          type="tele"
-          placeholder="XXX XXX XXX"
-          v-model="model.email"
+          type="tel"
+          v-model="model.numero"
         >
         </base-input>
       </div>
     </div>
-    <base-button slot="footer" type="primary" fill>Guardar</base-button>
+    <base-button slot="footer" type="primary" fill @click="guardarDados">Guardar</base-button>
   </card>
 </template>
+
 <script>
 export default {
   props: {
     model: {
       type: Object,
       default: () => {
-        return {};
+        return {
+          nome: '',
+          email: '',
+          numero: ''
+        };
       },
     },
   },
+  mounted() {
+    this.carregarDados();
+  },
+  methods: {
+    carregarDados() {
+      const dados = JSON.parse(localStorage.getItem('dados'));
+      if (dados) {
+        this.model.nome = dados.nome;
+        this.model.email = dados.email;
+        this.model.numero = dados.numero;
+      }
+    },
+    guardarDados() {
+      localStorage.setItem('dados', JSON.stringify(this.model));
+      alert('Dados guardados com sucesso!');
+    }
+  }
 };
 </script>
-<style></style>
+
+<style>
+/* Seu estilo aqui */
+</style>
