@@ -57,13 +57,23 @@ export default {
                 alert('As senhas não coincidem!');
                 return;
             }
+
             const data = {
                 nome: this.nome,
                 numero: this.numero,
                 email: this.email,
                 pass: this.pass
             };
-            localStorage.setItem('dados', JSON.stringify(data));
+
+            // Recuperar os usuários existentes no localStorage ou inicializar um array vazio
+            const utilizadores = JSON.parse(localStorage.getItem('utilizadores')) || [];
+
+            // Adicionar o novo usuário à lista
+            utilizadores.push(data);
+
+            // Armazenar a lista atualizada de usuários no localStorage
+            localStorage.setItem('utilizadores', JSON.stringify(utilizadores));
+
             alert('Dados guardados com sucesso!');
             this.$router.push({ name: 'Login' });
         }

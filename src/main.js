@@ -40,7 +40,7 @@ const dashboardData = {
         },
         {
           id: 2,
-          item: "Roupasde Inverno",
+          item: "Roupas de Inverno",
           quantidade: "50 peças"
         },
         {
