@@ -107,14 +107,38 @@ export default {
   },
   methods: {
     carregarDados() {
-      const dados = JSON.parse(localStorage.getItem('dados'));
-      if (dados) {
-        this.model.nome = dados.nome;
+      const currentUserId = localStorage.getItem('currentUserId');
+      if (!currentUserId) {
+        alert('Nenhum utilizador autenticado.');
+        return;
+      }
+
+      const utilizadores = JSON.parse(localStorage.getItem('utilizadores')) || [];
+      const utilizador = utilizadores.find(user => user.id === currentUserId);
+
+      if (utilizador) {
+        this.model.nome = utilizador.nome;
+      } else {
+        alert('Utilizador não encontrado.');
       }
     },
     guardarDados() {
-      localStorage.setItem('dados', JSON.stringify(this.model));
-      alert('Dados guardados com sucesso!');
+      const currentUserId = localStorage.getItem('currentUserId');
+      if (!currentUserId) {
+        alert('Nenhum utilizador autenticado.');
+        return;
+      }
+
+      const utilizadores = JSON.parse(localStorage.getItem('utilizadores')) || [];
+      const utilizadorIndex = utilizadores.findIndex(user => user.id === currentUserId);
+
+      if (utilizadorIndex !== -1) {
+        utilizadores[utilizadorIndex] = { ...utilizadores[utilizadorIndex], ...this.model };
+        localStorage.setItem('utilizadores', JSON.stringify(utilizadores));
+        alert('Dados guardados com sucesso!');
+      } else {
+        alert('Utilizador não encontrado.');
+      }
     },
     carregarDadosDoacoes() {
       const dashboardData = JSON.parse(localStorage.getItem('dashboardData'));
@@ -124,6 +148,9 @@ export default {
     },
     guardarDadosDoacoes() {
       let dashboardData = JSON.parse(localStorage.getItem('dashboardData'));
+      if (!dashboardData) {
+        dashboardData = {};
+      }
       dashboardData.doacoes = this.model1.doacoes;
       localStorage.setItem('dashboardData', JSON.stringify(dashboardData));
       alert('Dados guardados com sucesso!');

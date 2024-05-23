@@ -18,6 +18,8 @@ const TableList = () =>
   import(/* webpackChunkName: "common" */ "@/pages/TableList.vue");
 const Acao = () =>
   import(/* webpackChunkName: "common" */ "@/pages/Acao.vue");
+const Pass = () =>
+  import(/* webpackChunkName: "common" */ "@/pages/RecuperarPass.vue");
 
 const routes = [
   {
@@ -34,6 +36,11 @@ const routes = [
         path: "profile",
         name: "Perfil",
         component: Profile,
+      },
+      {
+        path: "pass",
+        name: "Recuperar Palavra Pass",
+        component: Pass,
       },
       {
         path: "acao",

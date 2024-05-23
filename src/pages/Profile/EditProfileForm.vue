@@ -28,13 +28,13 @@
       <div class="col-md-4 pl-md-1">
         <base-input
           label="Palavrapass"
-          type="tel"
+          type="password"
           v-model="model.pass"
         >
         </base-input>
       </div>
     </div>
-    <base-button slot="footer" type="primary" fill @click="guardarDados()">Guardar</base-button>
+    <base-button slot="footer" type="primary" fill @click="guardarDados">Guardar</base-button>
   </card>
 </template>
 
@@ -58,22 +58,42 @@ export default {
   },
   methods: {
     carregarDados() {
-      const dados = JSON.parse(localStorage.getItem('dados'));
-      if (dados) {
-        this.model.nome = dados.nome;
-        this.model.email = dados.email;
-        this.model.numero = dados.numero;
-        this.model.pass = dados.pass;
+      const currentUserId = localStorage.getItem('currentUserId');
+      if (!currentUserId) {
+        alert('Nenhum utilizador autenticado.');
+        return;
+      }
+
+      const utilizadores = JSON.parse(localStorage.getItem('utilizadores')) || [];
+      const utilizador = utilizadores.find(user => user.id === currentUserId);
+
+      if (utilizador) {
+        this.model.nome = utilizador.nome;
+        this.model.email = utilizador.email;
+        this.model.numero = utilizador.numero;
+        this.model.pass = utilizador.pass;
+      } else {
+        alert('Utilizador não encontrado.');
       }
     },
     guardarDados() {
-      localStorage.setItem('dados', JSON.stringify(this.model));
-      alert('Dados guardados com sucesso!');
+      const currentUserId = localStorage.getItem('currentUserId');
+      if (!currentUserId) {
+        alert('Nenhum utilizador autenticado.');
+        return;
+      }
+
+      const utilizadores = JSON.parse(localStorage.getItem('utilizadores')) || [];
+      const utilizadorIndex = utilizadores.findIndex(user => user.id === currentUserId);
+
+      if (utilizadorIndex !== -1) {
+        utilizadores[utilizadorIndex] = { ...utilizadores[utilizadorIndex], ...this.model };
+        localStorage.setItem('utilizadores', JSON.stringify(utilizadores));
+        alert('Dados guardados com sucesso!');
+      } else {
+        alert('Utilizador não encontrado.');
+      }
     }
   }
 };
 </script>
-
-<style>
-/* Seu estilo aqui */
-</style>

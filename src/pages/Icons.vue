@@ -6,6 +6,10 @@
                     <div class="login-form">
                         <form @submit.prevent="guardarDados" class="row">
                             <div class="form-group col-6 mb-5">
+                                <span><i class="fa fa-id-badge"></i></span>
+                                <input v-model="id" type="text" class="form-control" placeholder="ID" required>
+                            </div>
+                            <div class="form-group col-6 mb-5">
                                 <span><i class="fa fa-user"></i></span>
                                 <input v-model="nome" type="text" class="form-control" placeholder="Primeiro e Último Nome" required>
                             </div>
@@ -40,6 +44,7 @@
 export default {
     data() {
         return {
+            id: '',
             nome: '',
             numero: '',
             email: '',
@@ -49,7 +54,7 @@ export default {
     },
     methods: {
         guardarDados() {
-            if (!this.nome || !this.numero || !this.email || !this.pass || !this.confirmPass) {
+            if (!this.id || !this.nome || !this.numero || !this.email || !this.pass || !this.confirmPass) {
                 alert('Por favor, preencha todos os campos!');
                 return;
             }
@@ -59,6 +64,7 @@ export default {
             }
 
             const data = {
+                id: this.id,
                 nome: this.nome,
                 numero: this.numero,
                 email: this.email,
@@ -67,6 +73,27 @@ export default {
 
             // Recuperar os usuários existentes no localStorage ou inicializar um array vazio
             const utilizadores = JSON.parse(localStorage.getItem('utilizadores')) || [];
+
+            // Verificar se o ID já está registrado
+            const idExists = utilizadores.some(user => user.id === this.id);
+            if (idExists) {
+                alert('Este ID já está registrado!');
+                return;
+            }
+
+            // Verificar se o email já está registrado
+            const emailExists = utilizadores.some(user => user.email === this.email);
+            if (emailExists) {
+                alert('Este email já está registrado!');
+                return;
+            }
+
+            // Verificar se o número de telemóvel já está registrado
+            const numeroExists = utilizadores.some(user => user.numero === this.numero);
+            if (numeroExists) {
+                alert('Este número de telemóvel já está registrado!');
+                return;
+            }
 
             // Adicionar o novo usuário à lista
             utilizadores.push(data);

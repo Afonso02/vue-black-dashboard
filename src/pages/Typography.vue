@@ -19,7 +19,9 @@
           </div>
           <div class="d-flex mb-3 justify-content-between">
             <div class="forget-password">
-              <span>Esqueceu-se da palavrapass?</span>
+              <router-link :to="{ name: 'Recuperar Palavra Pass' }">
+                <base-button style="font-size: 10px; padding: 2px;">Esqueceu-se da palavrapass?</base-button>
+              </router-link>
             </div>
           </div>
           <div>
@@ -54,6 +56,7 @@ export default {
       const utilizador = utilizadores.find(user => user.email === this.email && user.pass === this.password);
 
       if (utilizador) {
+        localStorage.setItem('currentUserId', utilizador.id);
         alert('Login bem-sucedido!');
         this.$router.push({ name: 'Ajudas Humanitárias' }); // Altere para o nome da sua rota de destino
       } else {
